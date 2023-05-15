@@ -1,0 +1,12 @@
+FrontEnd:
+    ☐ Create Basic Layout
+    ☐ Decide on sytlization framework
+    ☐ Create Mockup, Interaction (Figma?, Adobe XD?)
+    ☐ Create Basic HTML @started(23-02-02 16:13)
+
+BackEnd:
+    ✔ Create Database(s) @done(23-02-02 16:13)
+    ☐ Set up Authorization System
+    ☐ Api for some stuff? (requests library)
+    ☐ Set up routes for site (app.py)
+    

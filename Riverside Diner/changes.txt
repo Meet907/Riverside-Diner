@@ -1,0 +1,2 @@
+2/1 - Got Flask development app running - AS
+2/1 - Registration page works now (Was a problem with URI) - AS

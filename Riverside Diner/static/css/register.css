@@ -1,0 +1,103 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid {
+  width: 90vw;
+  height: 70vh;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  border-color: red;
+}
+
+.child {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 10px;
+  padding-bottom: 20px;
+}
+
+span {
+  font-size: 17px;
+}
+
+.graphic {
+  border-style: solid;
+  display: flex;
+  border-style: solid;
+  border-color: white;
+  border-width: 1px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+/* Input Fields */
+
+.input {
+  line-height: 28px;
+  border: 2px solid transparent;
+  border-bottom-color: #777;
+  padding: 0.2rem 0;
+  outline: none;
+  background-color: transparent;
+  color: #0d0c22;
+  transition: 0.3s cubic-bezier(0.6, 0.04, 0.3, 1);
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 20rem;
+}
+
+.input:focus,
+input:hover {
+  outline: none;
+  padding: 0.2rem 1rem;
+  border-radius: 1rem;
+  border-color: #7a9cc6;
+}
+
+.input::placeholder {
+  color: #777;
+}
+
+.input:focus::placeholder {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Submit Button */
+
+button {
+  padding: 1.3em 3em;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  color: white;
+  background-color: black;
+  border: none;
+  border-radius: 45px;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  margin-top: 25px;
+  margin-bottom: 20px;
+}

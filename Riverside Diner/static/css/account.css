@@ -1,0 +1,158 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.page {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 20em 10fr;
+  background-image: linear-gradient(to bottom right, #00f7ff, #00ffa2);
+}
+
+.main {
+  display: flex;
+  margin: 0;
+  height: 100%;
+  width: 90%;
+  overflow-y: hidden;
+  padding-top: 7em;
+}
+
+.header {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  max-height: 100%;
+  max-width: 100%;
+  border-top-left-radius: 60px;
+  background-image: linear-gradient(to bottom right, #028961, #06d194);
+}
+
+.body {
+  width: 100%;
+  height: 100vh;
+  margin-top: 200px;
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.sidebar {
+  background-color: rgb(228, 225, 225);
+  padding-left: 0;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  padding-top: 7em;
+  margin: 0;
+  border-top-right-radius: 60px;
+}
+
+.list_title {
+  font-size: xx-large;
+  font-weight: 700;
+  padding-bottom: 35px;
+}
+
+.settings_menu {
+  padding-top: 2em;
+  height: fit-content;
+  text-align: center;
+}
+
+.settings_item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 20px;
+  padding: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: large;
+}
+
+.settings_item:hover {
+  background-color: #06d194;
+  cursor: pointer;
+}
+
+#icons {
+  width: 20px;
+  height: 20px;
+}
+
+.label_format {
+  display: block;
+}
+
+input {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  width: 20em;
+  height: 20px;
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  padding: 1em;
+  background-color: #ccc;
+  box-shadow: inset 2px 5px 10px rgba(0, 0, 0, 0.3);
+  transition: 300ms ease-in-out;
+}
+
+#lname {
+  margin-left: 11px;
+}
+#email {
+  margin-left: 12px;
+}
+
+.input:focus {
+  background-color: white;
+  transform: scale(1.05);
+  box-shadow: 13px 13px 100px #969696, -13px -13px 100px #04a777;
+}
+
+input[type="submit"],
+input[type="button"] {
+  padding: 0;
+  width: 10em;
+  height: fit-content;
+  margin-left: 20px;
+  text-align: center;
+}
+input[type="submit"]:hover,
+input[type="button"]:hover {
+  background-color: white;
+  transform: scale(1.05);
+  cursor: pointer;
+  background-image: linear-gradient(to right, #04a777 0%, #06d194 100%);
+  transition: 0.5s ease;
+}
+
+form {
+  margin-top: 6em;
+}
+
+#resetWindow {
+  position: absolute;
+  background-color: red;
+}
+
+@media (max-width: 1000px) {
+  .settings_menu {
+    display: none;
+  }
+  .page {
+    grid-template-columns: 20px 10fr;
+  }
+  form {
+    margin-top: 0;
+  }
+}

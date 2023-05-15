@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title></title>
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/../static/css/login.css" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="grid">
+      <div class="child">
+        <form action="/login" method="post">
+          <input name="email" placeholder="Email" type="text" class="input" required="" />
+          <input name="passwordd" placeholder="Password" type="password" class="input" required="" />
+          <button type="submit">Submit</button>
+          <div class="need_account">
+            <span>Need an account?</span>
+            <br />
+            <a href="/register">Click Here</a>
+          </div>
+        </form>
+      </div>
+      <div class="graphic">
+        <img src="{{ url_for('static', filename='/assets/Cooking Login.jpg') }}" alt="" />
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

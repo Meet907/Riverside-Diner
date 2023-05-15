@@ -1,0 +1,15 @@
+File and Folder Meanings:
+    "files" folder is where we put the scripts for this project. This folder should only have ".py" files in it.
+    "static" folder is where all of our javascipt and CSS/SASS is goiong to go.
+    "templates" folder is where all of our HTML pages are going to go
+
+    "app.py" is the main file, it should be the only .py file outside of the "files" folder. This is the file that will allow us to deploy our SaaS to the web
+    "changes.txt" is where I would like us to put down any changes we make to the project. ANY changes. 
+        ex. "Removed x code block", "edited y file and how", "changed or added z and where". Any changes we make. 
+        This will help us to do our Weekly Status Reports as well as keep everyone on the same page on the status of the project.
+        I would like every entry to be dated and added initials so we know when and who made the change
+            Ex. "1/25 - Added another route to the app.py file - AS"
+    "list.todo" is self explanitory, its a running todo list for our project. We can add, remove, and complete features as we please to this list 
+        best used with "TODO+" Extension
+
+    Ignore ".vscode" folder

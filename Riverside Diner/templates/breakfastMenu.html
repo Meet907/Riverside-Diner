@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Menu | The Riverside Diner</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/breakfast.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    <link href="/static/css/index.css" rel="stylesheet" />
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Menu
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarScrollingDropdown">
+                        <li><a class="dropdown-item" href="/breakfast">Breakfast</a></li>
+                        <li><a class="dropdown-item" href="/lunch">Lunch</a></li>
+                        <li><a class="dropdown-item" href="/dinner">Dinner</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/reservations">Reservation</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/locations">Locations</a>
+                </li>
+            </ul>
+        </div>
+        <div class="mx-auto order-0">
+            <a class="navbar-brand mx-auto" href="/">Restuarant App</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".dual-collapse2">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2 me-auto">
+            {% if session.name %}
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href='{{ url_for("account") }}'>Welcome {{ session.name }}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout">Logout</a>
+                </li>
+            </ul>
+            {% else %}
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/login">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/register">Sign-Up</a>
+                </li>
+            </ul>
+            {% endif %}
+        </div>
+    </nav>
+    <main>
+        <div class="container">
+            {% for x in range(length)%}
+            <div class="card">
+                {% if x==0 %}
+                <img class="card-img-top" id="img-first" src="static\assets\1.png" alt="Card image cap">
+                {% endif %}
+                {% if x==1 %}
+                <img class="card-img-top" src="static\assets\2.png" alt="Card image cap">
+                {% endif %}
+                {% if x==2 %}
+                <img class="card-img-top" src="static\assets\3.png" alt="Card image cap">
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title">{{ bmenu[x][0] }}</h5>
+                    <p class="card-text">{{ bmenu[x][2] }}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Price: ${{ bmenu[x][1] }}</li>
+                </ul>
+            </div>
+            {% endfor %}
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2023 Riverside Dining</p>
+    </footer>
+</body>
+
+</html>

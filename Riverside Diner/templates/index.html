@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Restaurant App</title>
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+    crossorigin="anonymous"></script>
+  <link href="/static/css/index.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- For Icon Library -->
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-md navbar-dark shadow-5-strong">
+    <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            Menu
+          </a>
+          <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarScrollingDropdown">
+            <li><a class="dropdown-item" href="/breakfast">Breakfast</a></li>
+            <li><a class="dropdown-item" href="/lunch">Lunch</a></li>
+            <li><a class="dropdown-item" href="/dinner">Dinner</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/reservations">Reservation</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/locations">Locations</a>
+        </li>
+      </ul>
+    </div>
+    <div class="mx-auto order-0">
+      <a class="navbar-brand mx-auto" href="/">Restuarant App</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".dual-collapse2">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+      {% if session.name %}
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href='{{ url_for("account") }}'>Welcome {{ session.name }}</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/logout">Logout</a>
+        </li>
+      </ul>
+      {% else %}
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/login">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/register">Sign-Up</a>
+        </li>
+      </ul>
+      {% endif %}
+    </div>
+  </nav>
+  <div class="photo_top">
+    <div class="box_top">
+      <div class="border_box">
+        <div class="text_box">
+          <h3><span style="color: #04a777">Amazing</span> Meals</h3>
+          <p>
+            Experience a culinary delight at Riverside Diner, where our exquisite menu and attentive staff will ensure
+            your dining
+            experience is exceptional. Enjoy a picturesque riverside view while indulging in our delectable dishes that
+            are sure to
+            leave you satisfied
+          </p>
+          <button id="explore_menus" href="{{ url_for('breakfast') }}">Explore Our Menus</button>
+        </div>
+      </div>
+    </div>
+    <img class="photo_top_image" src="{{ url_for('static', filename='/assets/Chef Cooking.jpg')}}" alt="" />
+  </div>
+  <div class="offers">
+    <div class="offer_1">
+      <div class="offer_image">
+        <img src="{{ url_for('static', filename='/assets/Money.svg') }}" alt="">
+      </div>
+      <div class="offer_text">
+        <span class="caption">Save Money on Our Delicious Meals</span>
+      </div>
+    </div>
+    <div class="offer_2">
+      <div class="offer_image">
+        <img src="{{ url_for('static', filename='/assets/Serve.svg') }}" alt="">
+      </div>
+      <div class="offer_text">
+        <span class="caption">Fast Service With Every Visit</span>
+      </div>
+    </div>
+    <div class="offer_3">
+      <div class="offer_image">
+        <img src="{{ url_for('static', filename='/assets/Reservation.svg') }}" alt="">
+      </div>
+      <div class="offer_text">
+        <span class="caption">Reserve a Table Any Time, At home or On-the-Go</span>
+      </div>
+    </div>
+  </div>
+  <div id="trendyCarousel" class="carousel slide" data-bs-ride="false">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#trendyCarousel" data-bs-slide-to="0" class="active" aria-current="true"
+        aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#trendyCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#trendyCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="/static/assets/Waffle.jpg" class="d-block w-100" alt="Waffle" />
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Breakfast</h5>
+          <p>Served Fast and Easy</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="/static/assets/Burger.jpg" class="d-block w-100" alt="Burger" />
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Lunch</h5>
+          <p>House-made every day</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="/static/assets/Steak.jpg" class="d-block w-100" alt="Steak" />
+        <div class="carousel-caption d-none d-md-block">
+          <h5>Dinner</h5>
+          <p>For a savory meal in the evening</p>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#trendyCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#trendyCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+  <div id="footer">
+    <div id="foot1">
+      <img id="Logo" src="{{ url_for('static', filename='/assets/Logo Temp.svg')}}" alt="Logo">
+      <span class="caption">Where Every Bite is a Riverside Delight!</span>
+    </div>
+    <div id="foot2">
+      <a href="#"><img class="FooterIcons" src="{{ url_for('static', filename='/assets/Email Icon.svg')}}"
+          alt="Email icon"></a>
+      <a href="#"><img class="FooterIcons" src="{{ url_for('static', filename='/assets/Phone Icon.svg')}}"
+          alt="Phone icon"></a>
+      <a href="#"><img class="FooterIcons" src="{{ url_for('static', filename='/assets/Twitter Icon.svg')}}"
+          alt="Twitter icon"></a>
+    </div>
+    <div id="foot3">
+      <hr>
+      <span class="local_about"><a href="/locations">Location</a></span>
+      <span class="local_about"><a href="#">About us</a></span>
+      <hr>
+    </div>
+    <div id="foot4">
+      <div id="copyrightLeft">
+        <span id="Copyright">©Copyright.2023</span>
+      </div>
+      <div id="Terms_Policy">
+        <span id="Terms"><a href="#">Terms and Conditions</a></span>
+        <span id="Policy"><a href="#">Privacy Policy</a></span>
+      </div>
+    </div>
+  </div>
+</body>
+
+
+</html>
